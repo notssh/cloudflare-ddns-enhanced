@@ -22,7 +22,7 @@ Access your home network remotely via a custom domain name without a static IP!
 #### >> Fixes and improvements:
 - **Fixed issue** [#91](https://github.com/timothymiller/cloudflare-ddns/issues/91) - The root domain record is no longer updated (CF Error 9000: DNS name is invalid).
 - **Fixed issue** [#74](https://github.com/timothymiller/cloudflare-ddns/issues/74) - Script not running with crontab. Thanks to [@Bagus-Septianto](https://github.com/Bagus-Septianto)!
-- **Fix:** due to incorrect tabulation in the deleteEntries function did not work correctly. Stale records were deleted only from the last domain zone.
+- **Fixed issue** [#97](https://github.com/timothymiller/cloudflare-ddns/issues/97) - deleteEntries function does not work correctly.
 - **Improvement:** when updating subdomains, all subdomains of the zone are now requested only once. In the original v1.0.1 version, for some reason they were requested before updating each subdomain, which slowed down the program quite a lot. Personally, I don't see any reason to request them every time before an update.
 - **Improvement:** better exception handling
 - **Improvement:** a more "pythonic" style of writing the code; improved readability
