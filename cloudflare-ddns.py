@@ -33,8 +33,8 @@ DEF_LOG_FORMATTER: str = "[%(levelname)s] %(asctime)s | %(message)s"
 CLOUDFLARE_API: str = 'https://api.cloudflare.com/client/v4/'
 # If it doesn't work ("IPv4 not detected" error), comment out the first one and try the second option.
 # I only have IPv4, it helped. However, I don't know how this will work if you have both IPv4 and IPv6.
-# TRACE_CGI_IPV4: str = "https://1.1.1.1/cdn-cgi/trace"
-TRACE_CGI_IPV4: str = "https://dns.cloudflare.com/cdn-cgi/trace"
+TRACE_CGI_IPV4: str = "https://1.1.1.1/cdn-cgi/trace"
+# TRACE_CGI_IPV4: str = "https://dns.cloudflare.com/cdn-cgi/trace"
 TRACE_CGI_IPV6: str = "https://[2606:4700:4700::1111]/cdn-cgi/trace"  # idk, sorry.
 
 
