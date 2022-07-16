@@ -72,8 +72,12 @@ def delete_entries(record_type):
     # Helper function for deleting A or AAAA records
     # in the case of no IPv4 or IPv6 connection, yet
     # existing A or AAAA records are found.
-
+    config_counter = 0
     for option in config["cloudflare"]:
+        config_counter += 1
+        if not option.get('zone_id'):
+            log.error(f"zone_id for config #{config_counter} is not specified! Skipping...")
+            continue
         answer = cf_api("GET",
                         f"zones/{option['zone_id']}/dns_records?per_page=100&type={record_type}",
                         option)
